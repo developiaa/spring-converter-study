@@ -3,6 +3,7 @@ package study.developia.converter.controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import study.developia.converter.type.IpPort;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -24,4 +25,12 @@ public class HelloController {
         System.out.println("data = " + data);
         return "ok";
     }
+
+    @GetMapping("/ip-port")
+    public String ipPort(@RequestParam IpPort ipPort) {
+        System.out.println("ipPort IP = " + ipPort.getIp());
+        System.out.println("ipPort Port = " + ipPort.getPort());
+        return "ok";
+    }
+
 }
