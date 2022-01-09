@@ -7,6 +7,7 @@ import study.developia.converter.converter.IntegerToStringConverter;
 import study.developia.converter.converter.IpPortToStringConverter;
 import study.developia.converter.converter.StringToIntegerConverter;
 import study.developia.converter.converter.StringToIpPortConverter;
+import study.developia.converter.formatter.MyNumberFormatter;
 
 @Configuration
 public class WebConfig implements WebMvcConfigurer {
@@ -14,9 +15,14 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addFormatters(FormatterRegistry registry) {
         //converter에 확장된 개념
-        registry.addConverter(new StringToIpPortConverter());
-        registry.addConverter(new StringToIntegerConverter());
+          //주석처리 우선순위
+//        registry.addConverter(new StringToIpPortConverter());
+//        registry.addConverter(new StringToIntegerConverter());
         registry.addConverter(new IpPortToStringConverter());
         registry.addConverter(new IntegerToStringConverter());
+
+        //추가
+        registry.addFormatter(new MyNumberFormatter());
+
     }
 }
