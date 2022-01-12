@@ -19,7 +19,7 @@ public class WebConfig implements WebMvcConfigurer {
 //        registry.addConverter(new StringToIpPortConverter());
 //        registry.addConverter(new StringToIntegerConverter());
         registry.addConverter(new IpPortToStringConverter());
-        registry.addConverter(new IntegerToStringConverter());
+//        registry.addConverter(new IntegerToStringConverter());
 
         //추가
         registry.addFormatter(new MyNumberFormatter());
