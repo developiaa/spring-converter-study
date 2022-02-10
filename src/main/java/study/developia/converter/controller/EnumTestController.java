@@ -13,8 +13,8 @@ import study.developia.converter.enums.ImageStatus;
 public class EnumTestController {
 
     @GetMapping
-    public String converterView(@RequestParam(name = "status", required = false, defaultValue = "PENDING")
-                                        ImageStatus status) {
+    public String converterView(@RequestParam(name = "status",
+            required = false, defaultValue = "PENDING") ImageStatus status) {
         log.info("ImageStatus : {}", status);
         return "OK";
     }

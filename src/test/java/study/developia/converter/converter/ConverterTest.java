@@ -1,6 +1,7 @@
 package study.developia.converter.converter;
 
 import org.junit.jupiter.api.Test;
+import study.developia.converter.enums.ImageStatus;
 import study.developia.converter.type.IpPort;
 
 import static org.assertj.core.api.Assertions.*;
@@ -35,5 +36,13 @@ public class ConverterTest {
         String source = "127.0.0.1:8080";
         IpPort result = converter.convert(source);
         assertThat(result).isEqualTo(new IpPort("127.0.0.1", 8080));
+    }
+
+    @Test
+    void imageStatus(){
+        PartnerServiceImageStatusConverter partnerServiceImageStatusConverter = new PartnerServiceImageStatusConverter();
+        String value = ImageStatus.APPROVE.getValue();
+        ImageStatus imageStatus = partnerServiceImageStatusConverter.convertToEntityAttribute(value);
+        assertThat(imageStatus).isEqualTo(partnerServiceImageStatusConverter.convertToEntityAttribute(value));
     }
 }
